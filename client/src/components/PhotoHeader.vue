@@ -1,14 +1,12 @@
 <script setup></script>
 
 <template>
-  <main>
-    <section class="photo-header">
-      <div class="photo-header__logo text-center">
-        Welcome to<br />
-        d'Georgion &amp; Paul
-      </div>
-    </section>
-  </main>
+  <section class="photo-header">
+    <div class="photo-header__logo text-center">
+      Welcome to<br />
+      d'Georgion &amp; Paul
+    </div>
+  </section>
 </template>
 
 <style lang="scss">
