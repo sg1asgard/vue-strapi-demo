@@ -1,0 +1,9 @@
+{
+  "esversion": 11,
+  "node": true,
+  "browser": false,
+  "eqeqeq": true,
+  "nocomma": true,
+  "nonbsp": true,
+  "module": true
+}

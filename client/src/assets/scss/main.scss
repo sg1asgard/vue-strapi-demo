@@ -1,0 +1,51 @@
+// Custom.scss
+// Option B: Include parts of Bootstrap
+
+// 1. Include functions first (so you can manipulate colors, SVGs, calc, etc)
+@import '../../../node_modules/bootstrap/scss/functions';
+
+// 2. Include any default variable overrides here
+@import 'variables';
+
+// 3. Include remainder of required Bootstrap stylesheets
+@import '../../../node_modules/bootstrap/scss/variables';
+
+// 4. Include any default map overrides here
+$theme-colors: map-merge($theme-colors, $custom-colors);
+
+// 5. Include remainder of required parts
+@import '../../../node_modules/bootstrap/scss/mixins';
+
+// 6. Optionally include any other parts as needed
+@import '../../../node_modules/bootstrap/scss/bootstrap.scss';
+
+// 7. Add additional custom code here
+html,
+body {
+  height: 100%;
+}
+body {
+  font-family: 'Roboto', sans-serif;
+  font-size: 18px;
+  position: relative;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: $gray-800;
+}
+
+// Transitions
+// https://vuejs.org/guide/built-ins/transition.html#css-based-transitions
+.v-enter-active,
+.v-leave-active {
+  transition: opacity 0.2s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
