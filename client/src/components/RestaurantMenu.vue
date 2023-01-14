@@ -26,7 +26,11 @@ const addToCart = () => {
             dapibus libero vitae diam porta, ac iaculis turpis tristique. Morbi
             sed suscipit magna, malesuada pretium felis.
           </p>
-          <button type="button" @click.prevent="addToCart()">
+          <button
+            type="button"
+            class="btn add-to-cart"
+            @click.prevent="addToCart()"
+          >
             Add to cart
           </button>
         </div>
@@ -53,6 +57,12 @@ const addToCart = () => {
         height: 24px;
         border-bottom: 2px dotted goldenrod;
         margin: 0px 12px;
+      }
+    }
+    .add-to-cart {
+      border: 1px solid goldenrod;
+      &:hover {
+        background-color: lighten($color: goldenrod, $amount: 30);
       }
     }
   }
