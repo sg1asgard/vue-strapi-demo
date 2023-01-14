@@ -25,7 +25,7 @@ body {
   height: 100%;
 }
 body {
-  font-family: 'Roboto', sans-serif;
+  font-family: 'Roboto Flex', sans-serif;
   font-size: 18px;
   position: relative;
 }
@@ -36,6 +36,7 @@ h4,
 h5,
 h6 {
   color: $gray-800;
+  font-family: 'Roboto Serif', serif;
 }
 
 // Transitions
@@ -50,4 +51,8 @@ h6 {
   opacity: 0;
 }
 
-.demo-app {}
+.demo-app {
+  a {
+    color: $primary;
+  }
+}

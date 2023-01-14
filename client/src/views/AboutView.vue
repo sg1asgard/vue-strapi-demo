@@ -1,12 +1,12 @@
 <script setup>
 import PhotoHeader from '@/components/PhotoHeader.vue'
-import RestaurantMenu from '@/components/RestaurantMenu.vue'
+import AboutPage from '@/components/AboutPage.vue'
 </script>
 
 <template>
   <main>
     <PhotoHeader />
-    <RestaurantMenu />
+    <AboutPage />
   </main>
 </template>
 

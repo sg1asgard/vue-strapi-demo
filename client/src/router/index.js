@@ -12,6 +12,21 @@ const router = createRouter({
       path: '/',
       name: 'home',
       component: loadComponent('HomeView')
+    },
+    {
+      path: '/about',
+      name: 'about',
+      component: loadComponent('AboutView')
+    },
+    {
+      path: '/contact',
+      name: 'contact',
+      component: loadComponent('ContactView')
+    },
+    {
+      path: '/cart',
+      name: 'cart',
+      component: loadComponent('CartView')
     }
   ]
 })
