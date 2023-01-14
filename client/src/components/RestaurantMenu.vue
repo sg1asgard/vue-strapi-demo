@@ -28,7 +28,7 @@ const addToCart = () => {
           </p>
           <button
             type="button"
-            class="btn add-to-cart"
+            class="btn add-to-cart mt-2"
             @click.prevent="addToCart()"
           >
             Add to cart
