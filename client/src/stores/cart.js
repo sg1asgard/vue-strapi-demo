@@ -4,7 +4,7 @@ import { useStorage } from '@vueuse/core'
 export const useCart = defineStore({
   id: 'user_cart',
   state: () => ({
-    cartItems: useStorage('cart_items', [])
+    cartItems: ['1', '2']
   }),
   getters: {
     getCartItems: (state) => state.cartItems,
