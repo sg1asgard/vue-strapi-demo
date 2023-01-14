@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "signin": "/auth/local",
+    "register": "auth/local/register"
+  },
+  "users": {
+    "userSignedIn": "/users/me",
+    "userID": "/users/?id="
+  }
+}
