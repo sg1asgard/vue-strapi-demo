@@ -4,7 +4,8 @@ import { useCart } from '@/stores/cart'
 
 const cart = useCart()
 const addToCart = () => {
-  cart.storeCartItems('dude')
+  let item = ref('item')
+  cart.storeCartItems(item.value)
 }
 </script>
 
