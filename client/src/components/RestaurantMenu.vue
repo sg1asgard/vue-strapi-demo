@@ -17,8 +17,9 @@ const addToCart = () => {
         <div class="menu-photo"></div>
         <div class="flex-fill ps-4">
           <div class="d-flex flex-row">
-            <div class="flex-fill"><h3 class="fs-4">Menu name</h3></div>
-            <div class="price"><h3 class="fs-4">$15</h3></div>
+            <div class="menu-title"><h3 class="fs-4">Menu name</h3></div>
+            <div class="flex-fill menu-separator"></div>
+            <div class="menu-price"><h3 class="fs-4">$15</h3></div>
           </div>
           <p class="pt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
@@ -44,6 +45,15 @@ const addToCart = () => {
       background-color: gray;
       background-image: url(https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2584&q=80);
       background-size: cover;
+    }
+    .menu-separator {
+      &::after {
+        display: block;
+        content: '';
+        height: 24px;
+        border-bottom: 2px dotted goldenrod;
+        margin: 0px 12px;
+      }
     }
   }
 }
