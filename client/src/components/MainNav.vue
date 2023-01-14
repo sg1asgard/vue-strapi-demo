@@ -1,13 +1,12 @@
 <script setup>
 import { ref, computed, onMounted } from 'vue'
 import { RouterLink } from 'vue-router'
-import { storeToRefs } from "pinia";
+import { storeToRefs } from 'pinia'
 import { useCart } from '@/stores/cart'
 
 const cart = useCart()
-// const { getCartNumber } = storeToRefs(cart)
-const getCartNumber = computed(() => cart.getCartNumber);
-
+const { getCartNumber } = storeToRefs(cart)
+// const getCartNumber = computed(() => cart.getCartNumber)
 
 onMounted(() => {})
 </script>
