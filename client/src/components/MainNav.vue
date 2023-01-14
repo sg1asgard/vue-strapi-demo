@@ -17,7 +17,9 @@ onMounted(() => {})
       <RouterLink to="/">Menu</RouterLink>
       <RouterLink to="/about">About</RouterLink>
       <RouterLink to="/contact">Contact</RouterLink>
-      <RouterLink to="/cart">Cart ({{ getCartNumber }})</RouterLink>
+      <RouterLink to="/cart"
+        >Cart ({{ getCartNumber }}) <i class="bi bi-handbag"></i
+      ></RouterLink>
     </div>
   </div>
 </template>
