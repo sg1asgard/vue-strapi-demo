@@ -1,16 +1,51 @@
 <script setup>
-import { ref } from 'vue'
+import { ref, onMounted } from 'vue'
 import { useCart } from '@/stores/cart'
+import { apiCalls } from '@/utilities/apiCalls.js'
+
+// Errors
+const isSuccess = ref(false)
+const isError = ref(false)
+const message = ref()
+
+const theMenu = ref([])
+
+// Get Education by ID
+const getRestaurantMenu = async () => {
+  try {
+    const response = await apiCalls.getMenus()
+
+    if (response.status === 200) {
+      theMenu.value = response.data.data
+
+      isSuccess.value = true
+      isError.value = false
+    }
+    return true
+  } catch (error) {
+    isSuccess.value = false
+    isError.value = true
+    message.value = error.message
+
+    return error
+  }
+}
 
 const cart = useCart()
 const addToCart = () => {
   let item = ref('item')
   cart.storeCartItems(item.value)
 }
+
+onMounted(() => {
+  getRestaurantMenu()
+})
 </script>
 
 <template>
   <section class="restaurant-menu mt-5">
+    {{ theMenu }}
+
     <h2 class="text-center">Our Menu</h2>
     <div class="daily-menu mt-5">
       <div class="d-flex flex-row">
@@ -21,6 +56,7 @@ const addToCart = () => {
             <div class="flex-fill menu-separator"></div>
             <div class="menu-price"><h3 class="fs-4">$15</h3></div>
           </div>
+
           <p class="pt-2">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
             dapibus libero vitae diam porta, ac iaculis turpis tristique. Morbi

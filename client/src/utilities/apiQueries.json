@@ -6,5 +6,8 @@
   "users": {
     "userSignedIn": "/users/me",
     "userID": "/users/?id="
+  },
+  "menu": {
+    "getMenu": "/menus"
   }
 }
