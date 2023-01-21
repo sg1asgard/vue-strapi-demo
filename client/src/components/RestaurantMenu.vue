@@ -18,6 +18,8 @@ const getRestaurantMenu = async () => {
     if (response.status === 200) {
       theMenu.value = response.data.data
 
+      console.log('theMenu', theMenu.value)
+
       isSuccess.value = true
       isError.value = false
     }
@@ -44,31 +46,39 @@ onMounted(() => {
 
 <template>
   <section class="restaurant-menu mt-5">
-    {{ theMenu }}
-
     <h2 class="text-center">Our Menu</h2>
     <div class="daily-menu mt-5">
-      <div class="d-flex flex-row">
-        <div class="menu-photo"></div>
-        <div class="flex-fill ps-4">
-          <div class="d-flex flex-row">
-            <div class="menu-title"><h3 class="fs-4">Menu name</h3></div>
-            <div class="flex-fill menu-separator"></div>
-            <div class="menu-price"><h3 class="fs-4">$15</h3></div>
-          </div>
+      <div v-for="(item, index) in theMenu" :key="index">
+        <div class="d-flex flex-row">
+          <div
+            class="menu-photo"
+            :style="`background-image: url(http://localhost:1337${item.attributes.menuphoto.data.attributes.formats.large.url})`"
+          ></div>
+          <div class="flex-fill ps-4">
+            <div class="d-flex flex-row">
+              <div class="menu-title">
+                <h3 class="fs-4 text-capitalize">
+                  {{ item.attributes.menuname }}
+                </h3>
+              </div>
+              <div class="flex-fill menu-separator"></div>
+              <div class="menu-price">
+                <h3 class="fs-4">${{ item.attributes.menuprice }}</h3>
+              </div>
+            </div>
 
-          <p class="pt-2">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam
-            dapibus libero vitae diam porta, ac iaculis turpis tristique. Morbi
-            sed suscipit magna, malesuada pretium felis.
-          </p>
-          <button
-            type="button"
-            class="btn add-to-cart mt-2"
-            @click.prevent="addToCart()"
-          >
-            Add to cart
-          </button>
+            <p class="pt-2">{{ item.attributes.menudescription }}</p>
+            <button
+              type="button"
+              class="btn add-to-cart mt-2"
+              @click.prevent="addToCart()"
+            >
+              Add to cart
+            </button>
+          </div>
+        </div>
+        <div class="my-3">
+          <hr />
         </div>
       </div>
     </div>
@@ -83,7 +93,6 @@ onMounted(() => {
       min-width: 300px;
       height: 180px;
       background-color: gray;
-      background-image: url(https://images.unsplash.com/photo-1542826438-bd32f43d626f?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2584&q=80);
       background-size: cover;
     }
     .menu-separator {

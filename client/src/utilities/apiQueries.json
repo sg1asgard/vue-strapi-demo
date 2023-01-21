@@ -8,6 +8,6 @@
     "userID": "/users/?id="
   },
   "menu": {
-    "getMenu": "/menus"
+    "getMenu": "/menus/?populate=*"
   }
 }
